@@ -10,6 +10,7 @@ import Header from '../Common/Header';
 import PageTitle from '../Common/PageTitle';
 import useDiscover from '../../hooks/useDiscover';
 import Error from '../../pages/_error';
+import FilterButton from './Filter';
 
 const messages = defineMessages({
   trending: 'Trending',
@@ -36,8 +37,9 @@ const Trending: React.FC = () => {
   return (
     <>
       <PageTitle title={intl.formatMessage(messages.trending)} />
-      <div className="mt-1 mb-5">
+      <div className="grid grid-cols-2 mt-1 mb-5">
         <Header>{intl.formatMessage(messages.trending)}</Header>
+        <FilterButton />
       </div>
       <ListView
         items={titles}
